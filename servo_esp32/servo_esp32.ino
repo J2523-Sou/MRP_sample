@@ -23,11 +23,11 @@ void loop() {
 
   //角度を増加させる
   for (int i = 0; i <= 180; i++) {
-    servo.Write(i);
+    servo.write(i);
   }
   //角度を減少させる
   for (int i = 180; i >= 0; i--) {
-    servo.Write(i);
+    servo.write(i);
   }
 
 }
