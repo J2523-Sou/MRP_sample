@@ -15,7 +15,7 @@ Servo servo;
 void setup() {
 
   //0番ピンをservoに紐づける
-  servo.attach(0);
+  servo.attach(23);
 
 }
 

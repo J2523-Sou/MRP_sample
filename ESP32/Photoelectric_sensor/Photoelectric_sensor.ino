@@ -6,7 +6,8 @@
 
 */
 
-#define sensorPin 14;
+#define sensorPin 14
+#define LED 17
 
 void setup() {
   // パソコンに結果を表示するための準備（通信速度：115200）
@@ -14,6 +15,7 @@ void setup() {
 
   // センサーのピンを「信号を読み取る（入力）」モードに設定
   pinMode(sensorPin, INPUT);
+  pinMode(LED, OUTPUT);
 }
 
 void loop() {
@@ -24,10 +26,12 @@ void loop() {
   if (sensorValue == LOW) {
     // 物が光を遮っているとき
     Serial.println("遮断されています！");
+    digitalWrite(LED, HIGH);
   } else {
     // 光がそのまま通っているとき
     Serial.println("光が通っています。");
+    digitalWrite(LED, LOW);
   }
 
-  delay(50);
+  delay(6);
 }
