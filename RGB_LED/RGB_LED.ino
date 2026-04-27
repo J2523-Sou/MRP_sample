@@ -1,7 +1,7 @@
 #include <Adafruit_NeoPixel.h>
 #define LED_PIN 48            //  LEDのピン
 Adafruit_NeoPixel pixels(1, LED_PIN, NEO_GRB + NEO_KHZ800);     //  LED初期設定
-int RGB[3] = { 0, 0, 0 };
+int RGB[3] = { 0, 0, 0 };     //左からRed,Green,Blue
 int wait = 0.2;
 
 void display() {      
