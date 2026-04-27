@@ -21,8 +21,8 @@ void display() {
 void setup() {
   Serial.begin(9600);
   pixels.begin();
-  display();
   RGB[0] = 255;
+  display();
 }
 
 void loop() {
