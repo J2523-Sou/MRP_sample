@@ -1,9 +1,0 @@
-#include <iostream>
-#define SUB 2
-#define NUM 5
-
-int main(void)
-
-
-    
-}
