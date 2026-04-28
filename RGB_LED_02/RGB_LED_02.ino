@@ -8,7 +8,7 @@
 
 Adafruit_NeoPixel pixels(1, LED_PIN, NEO_GRB + NEO_KHZ800);     //  LED初期設定
 int RGB[3] = { 0, 0, 0 };     //左からRed,Green,Blue
-int wait = 0.2;
+int wait = 1000;
 
 void display(int R,int G,int B) {      
   //  色を指定して点灯させる
@@ -27,7 +27,6 @@ void display(int R,int G,int B) {
 void setup() {
   Serial.begin(9600);
   pixels.begin();
-  display();
   pinMode(SW_01, INPUT_PULLUP);
   pinMode(SW_02, INPUT_PULLUP);
   pinMode(SW_03, INPUT_PULLUP);
@@ -35,5 +34,10 @@ void setup() {
 
 void loop() {
   display(255, 0, 0);
+  delay(wait);
+  display(0, 255, 0);
+  delay(wait);
+  display(0, 0, 255);
+  delay(wait);
 
 }
