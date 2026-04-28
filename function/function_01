@@ -1,16 +1,15 @@
 #include <stdio.h>
-　　//関数の定義
-void buy(void)
-{
-printf("車を買いました。¥n");
+
+//関数の定義
+void buy(void) {
+	printf("車を買いました。¥n");
 }
-int main (void)
-{
 
-
-buy();
-
-printf("もう一台車を購入します。¥n");
-
-buy();
+void buy(void) {
+	printf("車を買いました。¥n");
+}
+int main (void)	{
+	buy();
+	printf("もう一台車を購入します。¥n");
+	buy();
 }
