@@ -1,16 +1,15 @@
 #include <iostream>
 
-  //関数の定義
+//			関数の定義
 
 void br() {
     std::cout << std::endl;
 }
 
-
 int buy(int x,int y)
 {
     int z;
-printf("%d万円と%d万円の車を買いました。",x,y);
+		printf("%d万円と%d万円の車を買いました。",x,y);
     br();
     
 
