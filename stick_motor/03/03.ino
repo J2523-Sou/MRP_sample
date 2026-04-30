@@ -3,10 +3,12 @@
   DCモーター（MRPドライバ使用） - Arduino版
 */
 
-#define PWM_01 10           // 9番ピン（PWM対応）
-#define PWM_02 9            // 10番ピン（PWM対応）
-#define resistor_pin_01 A0  // 可変抵抗を接続したピン
-#define resistor_pin_02 A1  // 可変抵抗を接続したピン
+#define motor01_01 10           // 9番ピン（PWM対応）
+#define motor01_02 9            // 10番ピン（PWM対応）
+#define motor02_01 5            // 9番ピン（PWM対応）
+#define motor02_02 6            // 10番ピン（PWM対応）
+#define resistor_pin_01 A0      // 可変抵抗を接続したピン
+#define resistor_pin_02 A1      // 可変抵抗を接続したピン
 
 int wait = 25;
 int maxSpeed = 255;  // 0-255の範囲で指定
@@ -16,8 +18,8 @@ float current_speed = 0.0;
 
 void setup() {
   Serial.begin(9600);
-  pinMode(PWM_01, OUTPUT);
-  pinMode(PWM_02, OUTPUT);
+  pinMode(motor01_01, OUTPUT);
+  pinMode(motor01_02, OUTPUT);
   analogReadResolution(12);  // 必要なら12ビット（0-4095）に変更可能
 }
 
@@ -36,14 +38,14 @@ void loop() {
   speed = speed + (target_speed - speed) * 0.05;
 
   if (speed > 0) {
-    analogWrite(PWM_01, speed);
-    analogWrite(PWM_02, 0);
+    analogWrite(motor01_01, speed);
+    analogWrite(motor01_02, 0);
   } else if (speed < 0) {
-    analogWrite(PWM_01, 0);
-    analogWrite(PWM_02, -speed);
+    analogWrite(motor01_01, 0);
+    analogWrite(motor01_02, -speed);
   } else {
-    analogWrite(PWM_01, 0);
-    analogWrite(PWM_02, 0);
+    analogWrite(motor01_01, 0);
+    analogWrite(motor01_02, 0);
   }
   delay(5);
 
