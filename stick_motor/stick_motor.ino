@@ -16,39 +16,25 @@ void setup() {
 }
 
 void loop() {
-  analogWrite(PWM_01, 0);
-  analogWrite(PWM_02, 100);
-  delay(3000);
+  int sensor_val;
+  sensor_val = analogRead(A1);
 
-  for (int i = 100; i > 0; i--) {
+
+  if (sensor_val < 200) {
+    analogWrite(PWM_02, 100);
     analogWrite(PWM_01, 0);
-    analogWrite(PWM_02, i);
-    Serial.println(i);
-    delay(10); 
-  }
+
+  } else if (sensor_val > 1800) {
+    analogWrite(PWM_02, 0);
+    analogWrite(PWM_01, 100);
     
-  for(int i = 0; i < 100; i++) {
-    analogWrite(PWM_01, i);
+  } else {
     analogWrite(PWM_02, 0);
-    Serial.println(i);
-    delay(10);
-  }
-  
-  analogWrite(PWM_01, 100);
-  analogWrite(PWM_02, 0);
-  delay(3000);
-
-for (int i = 100; i > 0; i--) {
-    analogWrite(PWM_01, i);
-    analogWrite(PWM_02, 0);
-    Serial.println(i);
-    delay(10); 
-  }
-for(int i = 0; i < 100; i++) {
     analogWrite(PWM_01, 0);
-    analogWrite(PWM_02, i);
-    Serial.println(i);
-    delay(10);
   }
-  
+
+  Serial.print("sensor_val:");
+  Serial.println(sensor_val);
+
+  delay(5);
 }
