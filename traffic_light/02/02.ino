@@ -16,12 +16,12 @@ void setup() {
 }
 
 void loop() {
-  digitalWrite(LED_red, HIGH);
+  digitalWrite(LED_red, HIGH); //赤
   delay(2000);
   digitalWrite(LED_red, LOW);
-  digitalWrite(LED_green, HIGH);
+  digitalWrite(LED_green, HIGH); //青
   delay(2000);
-  for (int i = 0; i < 5; i++) {
+  for (int i = 0; i < 5; i++) {　//青　点滅
     digitalWrite(LED_green, LOW);
     delay(280);
     digitalWrite(LED_green, HIGH);

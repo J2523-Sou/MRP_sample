@@ -18,15 +18,14 @@ void setup() {
 }
 
 void loop() {
-  
-    Serial.println("Switch is pressed");
-  digitalWrite(LED_01, HIGH);
+  //順番に光らせる
+  digitalWrite(LED_01, HIGH); //赤
   delay(1000);
-  digitalWrite(LED_01, LOW);
-  digitalWrite(LED_02, HIGH);
+  digitalWrite(LED_01, LOW);    
+  digitalWrite(LED_02, HIGH);　//黄色
   delay(500);
   digitalWrite(LED_02, LOW);
-  digitalWrite(LED_03, HIGH);
+  digitalWrite(LED_03, HIGH);　//青
   delay(1000);
   digitalWrite(LED_03, LOW);
     
